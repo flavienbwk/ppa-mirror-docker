@@ -4,9 +4,9 @@ Dockerized PPA downloader for apt installs.
 
 ## Why
 
-Since Ubuntu 20.04, `snap` is the new package management standard for Ubuntu, over the old-school `apt`. Unlike `apt`, `snap` packages all dependencies of a package in a single file to be easily deployed (packages are self-contained).
+Since Ubuntu 20.04, `snap` is the new package management standard for Ubuntu, over the old-school `apt`. Unlike `apt`, `snap` packages embark all dependencies into a single file to be easily deployed (packages are self-contained).
 
-However, it requires tricky configuration for offline infrastructures. For example, in Ubuntu 22.04, Chromium is not in the official `apt` mirror anymore, which is either installable through `snap` or [through the install of a PPA](https://askubuntu.com/questions/1204571/how-to-install-chromium-without-snap) (Personal Packages Archives). This is not possible on "on-the-edge" infrastructures because it requires Internet.
+However, it requires tricky configuration for offline infrastructures. For example, in Ubuntu 22.04, Chromium is not in the official `apt` mirror anymore, which is either installable through `snap` or [through the install of a PPA](https://askubuntu.com/questions/1204571/how-to-install-chromium-without-snap) (_Personal Packages Archives_). This is not possible on "on-the-edge" infrastructures because it requires Internet.
 
 This repositories allows to easily retrieve files from a specific PPA for Ubuntu systems, for packages to be downloadable through the traditional `apt` command.
 
