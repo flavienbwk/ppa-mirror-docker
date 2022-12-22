@@ -1,0 +1,23 @@
+version: '3.9'
+
+services: 
+
+    mirror:
+        build: .
+        command: /app/mirror.sh
+        env_file:
+            - .env
+        volumes:
+            - "./mirror.sh:/app/mirror.sh:ro"
+            - "./mirror:/downloads"
+
+    server:
+        build:
+            context: .
+            dockerfile: nginx.Dockerfile
+        restart: always
+        command: [nginx-debug, '-g', 'daemon off;']
+        volumes:
+            - "./mirror:/downloads:ro"
+        ports:
+            - "8080:80"
